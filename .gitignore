@@ -1,0 +1,14 @@
+# build output
+bin/
+obj/
+*.user
+
+# logs
+*.log
+
+# game-ripped / third-party assets (not mine to ship - see assets/README.md)
+assets/*.png
+assets/*.wav
+assets/*.ogg
+assets/*.ttf
+assets/*.ico

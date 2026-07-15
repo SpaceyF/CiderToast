@@ -1,0 +1,112 @@
+<Window x:Class="CiderToast.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CiderToast Settings"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        TextOptions.TextRenderingMode="Aliased"
+        TextOptions.TextFormattingMode="Display">
+    <Window.Resources>
+        <Style x:Key="Px" TargetType="Button">
+            <Setter Property="Foreground" Value="#E8E4EC"/>
+            <Setter Property="Background" Value="#3A3742"/>
+            <Setter Property="Padding" Value="10,4"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="b" Background="{TemplateBinding Background}"
+                                BorderBrush="#16141C" BorderThickness="2" SnapsToDevicePixels="True">
+                            <Border BorderBrush="#55515F" BorderThickness="2,2,0,0">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                  Margin="{TemplateBinding Padding}"/>
+                            </Border>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="b" Property="Background" Value="#4C4858"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Lbl" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#C8C4D2"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+
+    <Border CornerRadius="8" Background="#211D2A" BorderBrush="#16141C" BorderThickness="2">
+        <Border BorderBrush="#55515F" BorderThickness="2" CornerRadius="7">
+            <StackPanel Margin="16">
+                <!-- Title bar -->
+                <Grid x:Name="TitleBar" Margin="0,0,0,14">
+                    <TextBlock Text="CiderToast Settings" FontSize="20" Foreground="#FFFF55"
+                               VerticalAlignment="Center"/>
+                    <Button x:Name="CloseBtn" Style="{StaticResource Px}" Content="X"
+                            HorizontalAlignment="Right" Padding="9,3" FontSize="14"/>
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource Lbl}" Text="Position"/>
+                    <Button   x:Name="PositionBtn" Grid.Row="0" Grid.Column="1" Style="{StaticResource Px}"
+                              Content="Top Left" Margin="0,4"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource Lbl}" Text="Duration"/>
+                    <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Margin="0,4">
+                        <Button x:Name="DurMinus" Style="{StaticResource Px}" Content="-" Padding="12,4"/>
+                        <TextBlock x:Name="DurText" Style="{StaticResource Lbl}" Text="6.0s" Width="70"
+                                   TextAlignment="Center"/>
+                        <Button x:Name="DurPlus" Style="{StaticResource Px}" Content="+" Padding="12,4"/>
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource Lbl}" Text="Border scale"/>
+                    <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="0,4">
+                        <Button x:Name="ScaleMinus" Style="{StaticResource Px}" Content="-" Padding="12,4"/>
+                        <TextBlock x:Name="ScaleText" Style="{StaticResource Lbl}" Text="2.5" Width="70"
+                                   TextAlignment="Center"/>
+                        <Button x:Name="ScalePlus" Style="{StaticResource Px}" Content="+" Padding="12,4"/>
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource Lbl}" Text="Album art"/>
+                    <Button   x:Name="ArtBtn" Grid.Row="3" Grid.Column="1" Style="{StaticResource Px}"
+                              Content="ON" Margin="0,4"/>
+
+                    <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource Lbl}" Text="Color accent"/>
+                    <Button   x:Name="AccentBtn" Grid.Row="4" Grid.Column="1" Style="{StaticResource Px}"
+                              Content="ON" Margin="0,4"/>
+
+                    <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource Lbl}" Text="Start w/ Windows"/>
+                    <Button   x:Name="AutoBtn" Grid.Row="5" Grid.Column="1" Style="{StaticResource Px}"
+                              Content="OFF" Margin="0,4"/>
+                </Grid>
+
+                <!-- Actions -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,14,0,0">
+                    <Button x:Name="PreviewBtn" Style="{StaticResource Px}" Content="Preview" Margin="0,0,8,0"/>
+                    <Button x:Name="SaveBtn" Style="{StaticResource Px}" Content="Save"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Border>
+</Window>
