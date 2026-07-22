@@ -1,3 +1,4 @@
+[![forthebadge](/badges/it-works-why.svg)](https://forthebadge.com)
 # CiderToast 🎵
 
 a minecraft-style "now playing" toast for windows. start a song and a lil minecraft
