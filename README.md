@@ -1,4 +1,4 @@
-[![forthebadge](/badges/it-works-why.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/badges/powered-by-black-magic.svg)](https://forthebadge.com)
 
 # CiderToast 🎵
 
